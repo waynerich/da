@@ -3,23 +3,27 @@ Installing MySQL - https://dev.mysql.com/downloads/installer/
     General Availability (GA) Releases - Select Version - Select Operating System - mysql-installer-community-x.x.xx.{pkg}
 
 
-|                      |                                  |
-| -------------------- | -------------------------------- |
-| CREATE DATABASE      |                                  |
-| CREATE TABLE         |                                  |
-| INSERT INTO - VALUES |                                  |
-| SELECT               | output columns                   |
-| SELECT DISTINCT      | output unique values in a column |
+|     |                        |                                  |           |                            |
+| --- | ---------------------- | -------------------------------- | --------- | -------------------------- |
+| DDL | CREATE DATABASE        |                                  |           |                            |
+| DDL | CREATE TABLE           |                                  |           |                            |
+| DML | INSERT INTO - VALUES   |                                  |           |                            |
+| DQL | SELECT - FROM          | output columns                   | statement | SELECT * FROM              |
+| DQL | SELECT DISTINCT - FROM | output unique values in a column |           | SELECT DISTINCT gender     |
+| DQL | WHERE                  | filter records                   | clause    | WHERE first_name = 'Alpha' |
+|     | LIKE                   |                                  | statement |                            |
 
+| Comparison operators |                          |
+| -------------------- | ------------------------ |
+| =                    | equal to                 |
+| >                    | greater than             |
+| >=                   | greater than or equal to |
+| <                    | less than                |
+| <=                   | less than or equal to    |
+| !=                   | not equal to             |
 
-**Data Definition Language (DDL)**
-CREATE DATABASE db_name;
-USE db_name;
-CREATE TABLE table_name (
-    field_name data_type constraint(s)
-);
-INSERT INTO table_name (field_name(s))
-VALUES (value1);
-
-**Data Query Language (DQL)**
-SELECT
+| Logical operators |                                 |
+| ----------------- | ------------------------------- |
+| AND               | both conditions have to be true |
+| OR                | only one condition can be true  |
+| NOT               |                                 |
